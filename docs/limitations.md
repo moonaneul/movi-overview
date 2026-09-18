@@ -109,13 +109,17 @@ MOVI는 시각 중심 UI 이용에 어려움이 있는 사용자를 주요 대�
 - 오류 후 재시도 / 대체 흐름 고려
 - 일부 focus 이동과 접근성 마크업 보완
 
+### 현재까지 수행한 수동 검증
+
+- Keyboard-only: 로그인 일부 흐름, 잔액조회 핵심 흐름, 송금 수취인 선택
+- 200% 확대: Login / Accounts / Balance / Transfer / Review / Result 핵심 화면
+
 ### 아직 완료되지 않은 검증
 
 - 실제 시각장애 사용자 usability test
 - VoiceOver 기반 전체 핵심 흐름 검증
 - TalkBack 기반 전체 핵심 흐름 검증
-- 200% 확대 전체 흐름 검증
-- 실제 모바일 reflow 점검
+- 실제 모바일 기기 reflow 점검
 - screen reader 기반 송금 완료 E2E 검증
 
 따라서 현재는 다음 표현을 사용하지 않습니다.
@@ -124,8 +128,7 @@ MOVI는 시각 중심 UI 이용에 어려움이 있는 사용자를 주요 대�
 - “접근성 기준을 충족했다”
 - “VoiceOver / TalkBack 테스트를 완료했다”
 
-향후 실제 검증을 수행한 뒤  
-발견된 문제와 수정 내역을 [validation.md](./validation.md)에 기록합니다.
+수동 검증 결과와 이후 발견되는 문제·수정 내역은 [validation.md](./validation.md)에 기록합니다.
 
 ---
 
