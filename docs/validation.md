@@ -24,8 +24,8 @@
 | 직접 입력 송금 flow | 구현·검증됨 | Frontend PR #28 |
 | 실제 금융기관 OpenBanking E2E | 미검증 | 실제 운영 근거 없음 |
 | 실제 시각장애 사용자 usability test | 미수행 | 추가 검증 필요 |
-| Keyboard-only 핵심 flow | 확인 필요 | 별도 실측 필요 |
-| 200% zoom / reflow | 확인 필요 | 별도 실측 필요 |
+| Keyboard-only 핵심 flow | 부분 검증 | 로그인 일부 흐름 / 잔액조회 핵심 흐름 / 송금 수취인 선택 수동 확인 |
+| 200% zoom / reflow | 검증됨 | 6개 핵심 화면 200% 확대 수동 확인 |
 | VoiceOver | 확인 필요 | 별도 실기기 검증 필요 |
 | TalkBack | 확인 필요 | 별도 실기기 검증 필요 |
 
@@ -101,7 +101,40 @@ Frontend에서 다음 흐름을 실제 Backend contract에 맞춰 연결했습�
 
 ---
 
-## 3. Accessibility Validation Plan
+## 3. Accessibility Validation Status
+
+2026-09-18 수동 검증에서 다음을 확인했습니다.
+
+### Keyboard-only
+
+- 로그인 Tab 순서 정상
+- 전화번호 오류 시 전화번호 입력칸으로 focus 이동
+- PIN 오류 시 PIN 입력칸으로 focus 이동
+- 잔액조회 핵심 흐름 정상
+- 송금 수취인 선택 정상
+
+### 200% zoom / reflow
+
+다음 화면에서 텍스트 겹침, 핵심 버튼 잘림, 핵심 기능을 놓치게 하는 가로 스크롤 등의 문제를 발견하지 못했습니다.
+
+- Login
+- Accounts
+- Balance
+- Transfer input
+- Transfer review
+- Transfer result
+
+원본 수동 검증 기록:
+- [Frontend Accessibility Validation](https://github.com/moonaneul/movi_frontend/blob/main/docs/ACCESSIBILITY_VALIDATION.md)
+
+아직 수행하지 않은 검증:
+- VoiceOver
+- TalkBack
+- 실제 시각장애 사용자 usability test
+
+---
+
+## 4. Accessibility Validation Plan
 
 MOVI는 시각 중심 UI 이용이 어려운 사용자를 고려한 서비스이므로,  
 새 기능 추가보다 **핵심 금융 flow의 실제 접근성 검증**을 우선합니다.
@@ -117,7 +150,7 @@ MOVI는 시각 중심 UI 이용이 어려운 사용자를 고려한 서비스이
 
 ---
 
-## 4. Scenario A — Balance Inquiry
+## 5. Scenario A — Balance Inquiry
 
 ### Target flow
 
@@ -141,7 +174,7 @@ MOVI는 시각 중심 UI 이용이 어려운 사용자를 고려한 서비스이
 
 ---
 
-## 5. Scenario B — Transfer
+## 6. Scenario B — Transfer
 
 ### Target flow
 
@@ -168,7 +201,7 @@ MOVI는 시각 중심 UI 이용이 어려운 사용자를 고려한 서비스이
 
 ---
 
-## 6. Scenario C — Voice Transfer
+## 7. Scenario C — Voice Transfer
 
 ### Target flow
 
@@ -194,7 +227,7 @@ MOVI는 시각 중심 UI 이용이 어려운 사용자를 고려한 서비스이
 
 ---
 
-## 7. Scenario D — Error Recovery
+## 8. Scenario D — Error Recovery
 
 다음 오류는 정상 흐름과 별도로 검증합니다.
 
@@ -223,7 +256,7 @@ MOVI는 시각 중심 UI 이용이 어려운 사용자를 고려한 서비스이
 
 ---
 
-## 8. Test Environment
+## 9. Test Environment
 
 실제 접근성 검증을 수행할 때 아래 환경을 기록합니다.
 
@@ -243,7 +276,7 @@ MOVI는 시각 중심 UI 이용이 어려운 사용자를 고려한 서비스이
 
 ---
 
-## 9. Result Summary Template
+## 10. Result Summary Template
 
 검증을 마친 뒤 아래 형식으로 요약합니다.
 
@@ -264,7 +297,7 @@ MOVI는 시각 중심 UI 이용이 어려운 사용자를 고려한 서비스이
 
 ---
 
-## 10. Evidence Links
+## 11. Evidence Links
 
 - [My Contribution](./contribution.md)
 - [System Architecture](./architecture.md)
