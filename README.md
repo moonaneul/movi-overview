@@ -215,8 +215,10 @@ FDS timeout, 비정상 응답, 검증 실패 시 임의로 통과시키지 않�
 | Front–Backend 계약 | DTO / Controller / 오류 흐름 대조 및 수정 |
 | 직접 입력 송금 | 서버 review → explicit confirmation → 실행 흐름 |
 | 금융 연동 | Mock 환경 중심 검증 |
+| Keyboard-only | 로그인 일부 흐름, 잔액조회 핵심 흐름, 송금 수취인 선택 수동 확인 |
+| 200% 확대 | Login / Accounts / Balance / Transfer / Review / Result 화면 수동 확인 |
 
-접근성 실기기 검증 결과는 별도 문서로 추가할 예정입니다.
+접근성 검증 원본 기록은 [Frontend Accessibility Validation](https://github.com/moonaneul/movi_frontend/blob/main/docs/ACCESSIBILITY_VALIDATION.md)에 남깁니다.
 
 ---
 
@@ -228,7 +230,7 @@ FDS timeout, 비정상 응답, 검증 실패 시 임의로 통과시키지 않�
 - 실제 금융망 종단 운영보다 Mock 기반 흐름 검증이 중심입니다.
 - AI 모델과 AI 서버는 제 담당이 아닙니다.
 - 실제 시각장애 사용자 대상 사용성 테스트는 아직 수행하지 않았습니다.
-- VoiceOver / TalkBack / 200% 확대 등 실기기 접근성 검증은 추가 검증이 필요합니다.
+- VoiceOver / TalkBack과 실제 시각장애 사용자 대상 접근성 검증은 추가 검증이 필요합니다.
 - 코드 구현에는 AI 코딩 도구가 많이 활용되었습니다.
 
 이 한계는 숨기지 않고, 실제로 수행한 **문제 정의 · 시스템 책임 분리 · 예외 설계 · 구현 검증**을 중심으로 프로젝트를 설명합니다.
@@ -267,16 +269,17 @@ FDS timeout, 비정상 응답, 검증 실패 시 임의로 통과시키지 않�
 
 ## 12. Next Validation
 
-새 기능을 늘리는 대신 기존 서비스가 정의한 접근성 요구사항을 실제로 검증하는 것을 다음 단계로 두고 있습니다.
+현재 Keyboard-only 일부 핵심 흐름과 200% 확대 검증을 수행했습니다.
 
-- Keyboard-only navigation
-- 200% zoom / reflow
+다음 검증 대상으로 남아 있는 항목은 다음과 같습니다.
+
 - VoiceOver
 - TalkBack
 - 음성 사용이 어려운 경우의 대체 입력 경로
 - 오류 발생 후 focus / recovery flow
+- 실제 시각장애 사용자 usability test
 
-검증 결과는 실제 실행 환경, 발견한 문제, 수정 내용과 함께 별도 문서로 기록할 예정입니다.
+검증 결과는 실제 실행 환경, 발견한 문제, 수정 내용과 함께 계속 기록합니다.
 
 ---
 
