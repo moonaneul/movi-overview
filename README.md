@@ -21,6 +21,14 @@ AI는 사용자의 발화를 해석하고, Backend가 실제 계좌·수취인·
 - **주요 기능:** 계좌/잔액 조회, 음성 송금, 누락 정보 재질문, 최종 확인, FDS 기반 위험 분기, 보호자 위험 알림
 - **개발 구조:** Frontend / Backend / AI 서버 분리
 
+<p align="center">
+  <img src="./assets/demo-flow.png" alt="MOVI 핵심 시연 사용자 흐름" width="100%">
+</p>
+
+<p align="center"><sub>
+Original demo scenario — 음성 요청 → 요청 내용 확인 → 송금 확인 → 안전 결과까지의 핵심 사용자 경험을 정리한 시연 자료입니다. 세부 연동 방식은 이후 구현 과정에서 변경되었습니다.
+</sub></p>
+
 ---
 
 ## 2. Problem
@@ -90,6 +98,14 @@ FDS 평가
       ↓
 결과 안내
 ```
+
+<p align="center">
+  <img src="./assets/user-flow.png" alt="MOVI 음성 요청 사용자 체험 흐름" width="100%">
+</p>
+
+<p align="center"><sub>
+Original UX flow — 음성 요청부터 확인 질문과 결과 확인까지의 사용자 경험을 정리한 시연 자료입니다. 이 이미지는 UX 흐름 설명용이며, 현재 검증된 기술 구조는 아래 System Architecture와 <a href="./docs/architecture.md">architecture.md</a>를 기준으로 합니다.
+</sub></p>
 
 ---
 
@@ -261,3 +277,13 @@ FDS timeout, 비정상 응답, 검증 실패 시 임의로 통과시키지 않�
 - 오류 발생 후 focus / recovery flow
 
 검증 결과는 실제 실행 환경, 발견한 문제, 수정 내용과 함께 별도 문서로 기록할 예정입니다.
+
+---
+
+## Documents
+
+- [My Contribution](./docs/contribution.md)
+- [System Architecture](./docs/architecture.md)
+- [Validation](./docs/validation.md)
+- [Limitations & Evidence Boundaries](./docs/limitations.md)
+- [Visual Assets Guide](./docs/visual-assets.md)
